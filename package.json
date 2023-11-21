@@ -1,0 +1,28 @@
+{
+	"name": "custom-bits-monorepo",
+	"version": "0.0.0",
+	"license": "MIT",
+	"type": "module",
+	"workspaces": [
+		"demo",
+		"configs/eslint-config-base",
+		"configs/eslint-config-ts",
+		"configs/prettier",
+		"configs/tsconfig",
+		"libs/boilerplate"
+	],
+	"scripts": {
+		"prettier:configs": "prettier ./configs --write",
+		"prettier:check": "npm run prettier:check --workspaces --if-present",
+		"prettier": "npm run prettier --workspaces --if-present",
+		"lint:check": "npm run lint:check --workspaces --if-present"
+	},
+	"engines": {
+		"npm": ">=7.0.0",
+		"node": ">=18.0.0"
+	},
+	"devDependencies": {
+		"@custom-bits/prettier": "^0.0.0"
+	}
+}
+

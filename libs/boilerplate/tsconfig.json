@@ -1,0 +1,10 @@
+{
+	"extends": "@custom-bits/tsconfig/base.json",
+	"compilerOptions": {
+		"rootDir": "./src",
+		"types": ["vite/client", "node"]
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "dist"],
+	"references": [{ "path": "./tsconfig.node.json" }]
+}
