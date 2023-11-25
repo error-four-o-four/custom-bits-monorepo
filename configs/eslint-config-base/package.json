@@ -1,16 +1,19 @@
 {
-  "name": "@custom-bits/eslint-config-base",
-  "version": "0.0.0",
-  "license": "MIT",
-  "main": "index.js",
-  "files": [
-    "index.js"
-  ],
-  "dependencies": {
-    "eslint": "^8.54.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-prettier": "^5.0.1"
-  }
+	"name": "@custom-bits/eslint-config-base",
+	"version": "0.0.0",
+	"license": "MIT",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"dependencies": {
+		"eslint": "^8.54.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-import": "^2.29.0",
+		"eslint-plugin-prettier": "^5.0.1"
+	},
+	"eslintConfig": {
+		"extends": "./index.js"
+	}
 }

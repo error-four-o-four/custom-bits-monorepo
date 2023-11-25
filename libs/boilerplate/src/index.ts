@@ -1,11 +1,11 @@
-import { ElementTag, HTMLTestElement } from './component.ts';
+import { defineElement } from '@custom-bits/core';
 
-if (!window.customElements.get(ElementTag)) {
-	window.customElements.define(ElementTag, HTMLTestElement);
-}
+import { elementTag, HTMLTestElement } from './component.ts';
+
+defineElement(elementTag, HTMLTestElement);
 
 declare global {
 	interface HTMLElementTagnameMap {
-		[ElementTag]: HTMLTestElement;
+		[elementTag]: HTMLTestElement;
 	}
 }

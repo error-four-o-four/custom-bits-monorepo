@@ -6,13 +6,11 @@ template.innerHTML = `<style>${rawCss}</style>${html}\n`;
 
 console.log('morp from component');
 
-export const ElementTag = 'test-element';
+export const elementTag = 'test-element';
 
 export class HTMLTestElement extends HTMLElement {
 	public shadow: ShadowRoot;
-
 	public wrap: HTMLSpanElement;
-
 	constructor() {
 		super();
 		this.shadow = this.attachShadow({ mode: 'open' });
@@ -22,6 +20,6 @@ export class HTMLTestElement extends HTMLElement {
 
 	public connectedCallback(): void {
 		const name = this.getAttribute('name') || 'World';
-		this.wrap.textContent = `Hellooooo ${name}`;
+		this.wrap.textContent = `Hello ${name}`;
 	}
 }

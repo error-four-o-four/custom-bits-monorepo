@@ -1,10 +1,10 @@
 {
-  "name": "@custom-bits/tsconfig",
-  "version": "0.0.0",
-  "license": "MIT",
-  "files": [
-    "./base.json",
-    "./node.json",
-    "./build.json"
-  ]
+	"name": "@custom-bits/tsconfig",
+	"version": "0.0.0",
+	"license": "MIT",
+	"files": [
+		"./base.json",
+		"./node.json",
+		"./lib.json"
+	]
 }

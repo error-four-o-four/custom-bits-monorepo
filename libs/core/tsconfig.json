@@ -1,9 +1,9 @@
 {
-	"extends": "@custom-bits/tsconfig/base.json",
+	"extends": "@custom-bits/tsconfig/lib.json",
 	"compilerOptions": {
-		"paths": {
-			"@custom-bits/boilerplate": ["../libs/boilerplate/src/index.ts"]
-		}
+		"baseUrl": "./",
+		"rootDir": "./src",
+		"types": ["vite/client", "node"]
 	},
 	"include": ["src"],
 	"exclude": ["node_modules", "dist"],

@@ -1,4 +1,7 @@
 {
 	"extends": "@custom-bits/tsconfig/node.json",
-	"include": ["vite.config.ts", "package.json"]
+	"compilerOptions": {
+		"baseUrl": "./"
+	},
+	"include": [".eslintrc.cjs", "vite.config.ts", "package.json"]
 }

@@ -39,3 +39,22 @@ https://stackoverflow.com/questions/57032522/eslint-complains-about-typescripts-
 https://github.com/microsoft/vscode-eslint/issues/1690\
 https://github.com/airbnb/javascript\
 https://www.npmjs.com/package/@rushstack/eslint-patch
+
+https://www.typescriptlang.org/docs/handbook/modules/guides/choosing-compiler-options.html\
+https://www.typescriptlang.org/docs/handbook/modules/theory.html#module-resolution
+
+required configs\
+demo => vite/ts app (https://github.com/vitejs/vite/blob/main/packages/create-vite/template-vanilla-ts/tsconfig.json)\
+libs => vite/ts lib, node, build (https://github.com/zhengxs2018/vitejs-monorepo-fullstack/blob/main/libs/api-interfaces/tsconfig.json, https://github.com/csr632/test-vite/blob/lib-monorepo/packages/demos/vite.demos.ts)\
+
+## todo
+
+root: add md linter
+
+.vscode\
+eslint.workingDirectories: [{ "mode": "auto" }]\
+typescript.tsdk: node_modules path
+
+fix unresolved packages\
+turborepo setup https://turbo.build/repo/docs/handbook/linting/eslint https://github.com/vercel/turbo/tree/main/examples
+vercel style-guide https://github.com/vercel/style-guide
