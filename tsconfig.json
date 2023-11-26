@@ -1,0 +1,9 @@
+{
+	"extends": "@custom-bits/config/typescript",
+	"files": [],
+	"references": [
+		{ "path": "./libs/core" },
+		{ "path": "./libs/boilerplate" },
+		{ "path": "./demo" }
+	]
+}

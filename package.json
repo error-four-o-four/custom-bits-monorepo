@@ -4,22 +4,24 @@
 	"license": "MIT",
 	"type": "module",
 	"workspaces": [
-		"configs/*",
-		"libs/*",
-		"demo"
+		"config",
+		"demo",
+		"libs/*"
 	],
 	"scripts": {
-		"prettier:configs": "prettier ./configs --write --config ./configs/prettier/index.json",
+		"// prettier:configs": "prettier ./configs --write --config ./configs/prettier/index.json",
 		"prettier:check": "npm run prettier:check --workspaces --if-present",
 		"prettier": "npm run prettier --workspaces --if-present",
 		"lint:check": "npm run lint:check --workspaces --if-present",
-		"dev": "cd demo && vite"
+		"dev": "npm run dev -w demo"
 	},
 	"engines": {
 		"npm": ">=7.0.0",
 		"node": ">=18.0.0"
 	},
 	"devDependencies": {
-		"@custom-bits/prettier": "*"
+		"@custom-bits/config": "*",
+		"prettier": "^3.1.0",
+		"typescript": "^5.2.2"
 	}
 }

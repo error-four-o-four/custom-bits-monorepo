@@ -3,26 +3,21 @@
 	"version": "1.0.0",
 	"license": "MIT",
 	"type": "module",
-	"scripts": {
-		"prettier:check": "prettier . --check --ignore-unknown",
-		"prettier": "prettier . --write --ignore-unknown",
-		"lint:check": "eslint . --ext .ts src/",
-		"lint": "eslint . --ext .ts src/ --fix",
-		"dev": "vite",
-		"build": "tsc && vite build"
-	},
-	"// exports": {
+	"exports": {
 		".": {
-			"import": "./src/index.ts"
+			"import": {
+				"default": "./lib/index",
+				"types": "./lib/index.d.ts"
+			}
 		}
 	},
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"build:tsc": "tsc -b ./tsconfig.build.json"
+	},
 	"devDependencies": {
-		"@custom-bits/eslint-config-ts-vite": "*",
-		"@custom-bits/prettier": "*",
-		"@custom-bits/tsconfig": "*",
-		"@types/node": "^20.9.3",
-		"eslint": "^8.54.0",
-		"prettier": "^3.1.0",
+		"@custom-bits/config": "*",
 		"typescript": "^5.2.2",
 		"vite": "^5.0.2",
 		"vite-plugin-dts": "^3.6.3",

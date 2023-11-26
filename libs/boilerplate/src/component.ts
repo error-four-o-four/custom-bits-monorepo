@@ -4,8 +4,6 @@ import rawCss from './template.css?inline';
 const template = document.createElement('template');
 template.innerHTML = `<style>${rawCss}</style>${html}\n`;
 
-console.log('morp from component');
-
 export const elementTag = 'test-element';
 
 export class HTMLTestElement extends HTMLElement {

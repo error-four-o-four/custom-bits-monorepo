@@ -1,23 +1,16 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"display": "Default",
+	"display": "Vite App",
+	"extends": "./base.json",
 	"compilerOptions": {
 		"target": "ES2020",
 		"useDefineForClassFields": true,
-		"module": "ESNext",
+		"module": "ES2020",
 		"lib": ["ES2020", "DOM", "DOM.Iterable"],
-		"skipLibCheck": true,
 
 		"moduleResolution": "Bundler",
 		"allowImportingTsExtensions": true,
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"noEmit": true,
-
-		"strict": true,
-		"noUnusedLocals": false,
-		"noUnusedParameters": false,
-		"noFallthroughCasesInSwitch": false
+		"noEmit": true
 	},
 	"exclude": ["node_modules"]
 }

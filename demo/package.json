@@ -5,17 +5,12 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"prettier:check": "prettier . --check --ignore-unknown",
-		"prettier": "prettier . --write --ignore-unknown",
-		"lint:check": "eslint . --ext .ts src/",
-		"lint": "eslint . --ext .ts src/ --fix",
 		"dev": "vite",
-		"build": "tsc && vite build"
+		"build": "vite build",
+		"preview": "vite preview --open -d"
 	},
 	"devDependencies": {
-		"@custom-bits/eslint-config-ts-vite": "*",
-		"@custom-bits/prettier": "*",
-		"@custom-bits/tsconfig": "*",
+		"@custom-bits/config": "*",
 		"eslint": "^8.54.0",
 		"prettier": "^3.1.0",
 		"typescript": "^5.2.2",

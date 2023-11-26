@@ -1,32 +1,26 @@
 {
 	"name": "@custom-bits/core",
 	"license": "MIT",
-	"// private": true,
+	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"// exports": {
+	"exports": {
 		".": {
-			"import": ""
+			"import": {
+				"default": "./lib/index.js",
+				"types": "./lib/index.d.ts"
+			}
 		}
 	},
 	"scripts": {
-		"prettier:check": "prettier . --check --ignore-unknown",
-		"prettier": "prettier . --write --ignore-unknown",
-		"lint:check": "eslint . --ext .ts src/",
-		"lint": "eslint . --ext .ts src/ --fix",
 		"dev": "vite",
-		"build": "tsc && vite build"
+		"build": "vite build",
+		"build:tsc": "tsc -b ./tsconfig.build.json"
 	},
 	"devDependencies": {
-		"@custom-bits/eslint-config-ts-vite": "*",
-		"@custom-bits/prettier": "*",
-		"@custom-bits/tsconfig": "*",
-		"@types/node": "^20.10.0",
-		"eslint": "^8.54.0",
-		"prettier": "^3.1.0",
-		"typescript": "^5.3.2",
+		"@custom-bits/config": "*",
+		"typescript": "^5.2.2",
 		"vite": "^5.0.2",
 		"vite-plugin-dts": "^3.6.3"
 	}
 }
-

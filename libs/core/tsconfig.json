@@ -1,11 +1,9 @@
 {
-	"extends": "@custom-bits/tsconfig/lib.json",
+	"extends": "@custom-bits/config/typescript/lib",
 	"compilerOptions": {
-		"baseUrl": "./",
-		"rootDir": "./src",
-		"types": ["vite/client", "node"]
+		"baseUrl": ".",
+		"types": ["vite/client"]
 	},
-	"include": ["src"],
-	"exclude": ["node_modules", "dist"],
-	"references": [{ "path": "./tsconfig.node.json" }]
+	"include": ["package.json", "vite.config.ts", "src"],
+	"references": [{ "path": "./tsconfig.build.json" }]
 }

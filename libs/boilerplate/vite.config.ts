@@ -4,21 +4,27 @@ import { resolve } from 'path';
 import dts from 'vite-plugin-dts';
 import paths from 'vite-tsconfig-paths';
 
-import { name } from './package.json';
+import { dependencies } from './package.json';
 
 export default defineConfig({
+	build: {
+		emptyOutDir: true,
+		target: 'esnext',
+		outDir: 'lib',
+		lib: {
+			entry: resolve(__dirname, 'src/index.ts'),
+			formats: ['es'],
+			fileName: 'index',
+		},
+		rollupOptions: {
+			external: [...Object.keys(dependencies)],
+		},
+	},
 	plugins: [
 		paths(),
 		dts({
-			include: ['src/'],
+			rollupTypes: true,
+			tsconfigPath: resolve(__dirname, 'tsconfig.build.json'),
 		}),
 	],
-	build: {
-		lib: {
-			entry: resolve(__dirname, 'src/index.ts'),
-			name: name.split('/')[1],
-			fileName: (format) =>
-				format === 'es' ? `index.js` : `index.${format}.js`,
-		},
-	},
 });

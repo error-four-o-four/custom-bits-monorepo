@@ -1,4 +1,0 @@
-{
-	"extends": "@custom-bits/tsconfig/node.json",
-	"include": [".eslintrc.cjs", "vite.config.ts", "package.json"]
-}
