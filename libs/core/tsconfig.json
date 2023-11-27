@@ -2,7 +2,8 @@
 	"extends": "@custom-bits/config/typescript/lib",
 	"compilerOptions": {
 		"baseUrl": ".",
-		"types": ["vite/client"]
+		"noEmit": true, // do not use this tsconfig file accidentially
+		"emitDeclarationOnly": false
 	},
 	"include": ["package.json", "vite.config.ts", "src"],
 	"references": [{ "path": "./tsconfig.build.json" }]

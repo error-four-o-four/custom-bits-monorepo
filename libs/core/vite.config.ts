@@ -1,7 +1,5 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
-
-import dts from 'vite-plugin-dts';
+import { resolve } from 'node:path';
 
 // @todo import from config utils
 const onError = () => ({
@@ -31,10 +29,10 @@ export default defineConfig({
 	},
 	plugins: [
 		onError(),
-		dts({
-			rollupTypes: true,
-			tsconfigPath: resolve(__dirname, 'tsconfig.build.json'),
-		}),
+		// dts({
+		// 	rollupTypes: true,
+		// 	tsconfigPath: resolve(__dirname, 'tsconfig.build.json'),
+		// }),
 	],
 });
 

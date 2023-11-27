@@ -1,4 +1,4 @@
-import { defineElement } from '@custom-bits/core';
+import { defineElement } from ':core';
 
 import { elementTag, HTMLTestElement } from './component.ts';
 

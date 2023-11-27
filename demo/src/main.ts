@@ -1,5 +1,5 @@
 import './style.css';
 
-import '@custom-bits/boilerplate';
+import ':boilerplate';
 
-console.log('hello from demo again!');
+console.log('hello from demo!');

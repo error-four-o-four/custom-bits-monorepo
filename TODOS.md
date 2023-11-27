@@ -25,5 +25,6 @@ typescript.tsdk: node_modules path
 "lint:check": "eslint . --ext .ts src/",
 "lint": "eslint . --ext .ts src/ --fix",
 
-fix unresolved packages\
-turborepo setup https://turbo.build/repo/docs/handbook/linting/eslint https://github.com/vercel/turbo/tree/main/examples
+use del-cli\
+=> .tsbuildinfo\
+=> "build:clean"

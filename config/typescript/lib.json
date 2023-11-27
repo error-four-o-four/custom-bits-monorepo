@@ -4,27 +4,26 @@
 	"extends": "./base.json",
 	"compilerOptions": {
 		"composite": true,
+		"incremental": true,
 
-		"target": "ES2020",
+		"target": "ES2022",
 		"module": "ES2020",
 		"moduleResolution": "Bundler",
-		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"lib": ["ESNext", "DOM", "DOM.Iterable"],
 		"allowImportingTsExtensions": true,
+		"types": ["vite/client"],
 
 		"jsx": "preserve",
-		"incremental": true,
+		"useDefineForClassFields": true,
+
+		"noEmit": false,
 		"declaration": true,
 		"declarationMap": true,
 		"emitDeclarationOnly": true,
-		"sourceMap": true,
-		"types": ["vite/client"],
 
-		"baseUrl": ".",
-		"paths": {
-			"@custom-bits/*": ["./node_modules/@custom-bits/*/src"]
-		},
-
-		"useDefineForClassFields": true
+		"stripInternal": true,
+		"removeComments": true,
+		"listEmittedFiles": true
 	},
 	"exclude": ["node_modules", "lib"]
 }

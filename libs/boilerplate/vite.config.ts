@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
-import dts from 'vite-plugin-dts';
 import paths from 'vite-tsconfig-paths';
 
 import { dependencies } from './package.json';
@@ -20,11 +19,5 @@ export default defineConfig({
 			external: [...Object.keys(dependencies)],
 		},
 	},
-	plugins: [
-		paths(),
-		dts({
-			rollupTypes: true,
-			tsconfigPath: resolve(__dirname, 'tsconfig.build.json'),
-		}),
-	],
+	plugins: [paths()],
 });
