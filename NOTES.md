@@ -36,29 +36,32 @@ yarn workspace setup (server, client)
 
 ## config
 
-tsconfig.base.json examples [@vercel/style-guide](https://github.com/vercel/style-guide/blob/canary/typescript/tsconfig.base.json) [vitejs-monorepo-fullstack](https://github.com/zhengxs2018/vitejs-monorepo-fullstack/blob/main/tsconfig.base.json) [turborepo docs](https://turbo.build/repo/docs/handbook/linting/typescript#our-tsconfig-package) [turborepo with-vite](https://github.com/vercel/turbo/blob/main/examples/with-vite/packages/config-typescript/base.json)
+tsconfig.base.json examples\
+[@vercel/style-guide](https://github.com/vercel/style-guide/blob/canary/typescript/tsconfig.base.json)\
+[vitejs-monorepo-fullstack](https://github.com/zhengxs2018/vitejs-monorepo-fullstack/blob/main/tsconfig.base.json)\
+[turborepo docs](https://turbo.build/repo/docs/handbook/linting/typescript#our-tsconfig-package)\
+[turborepo with-vite](https://github.com/vercel/turbo/blob/main/examples/with-vite/packages/config-typescript/base.json)
 
 ### eslint
 
 ### Consider
 
-[eslint-plugin-import-exports-imports-resolver](https://github.com/thepassle/eslint-plugin-import-exports-imports-resolver/)
-[eslint-plugin-i](https://github.com/un-es/eslint-plugin-i/tree/fork-release)\
-eslint-import-resolver-node\
-eslint-import-resolver-vite\
-eslint-import-resolver-typescript\
+[@rushstack/eslint-patch](https://www.npmjs.com/package/@rushstack/eslint-patch) ✔\
+[eslint-plugin-import-exports-imports-resolver](https://github.com/thepassle/eslint-plugin-import-exports-imports-resolver/)\
+~~[eslint-plugin-i](https://github.com/un-es/eslint-plugin-i/tree/fork-release)~~\
+[prettier-plugin-packagejson](https://www.npmjs.com/package/prettier-plugin-packagejson)
 
-eslint module resolution [patch](https://www.npmjs.com/package/@rushstack/eslint-patch)
-
-example repos which use shared configs:
-* [airbnb-style](https://github.com/airbnb/javascript\)
-* [vercel style-guide](https://github.com/vercel/style-guide) 2023-11
-* [ttos](https://github.com/ttoss/ttoss/blob/main/packages/eslint-config/config.js\)
-* [moonrepo](https://github.com/moonrepo/dev/tree/master/packages/eslint-config/src)
-
-tutorials/blogs/guides/issues
-* [turborepo eslint](https://turbo.build/repo/docs/handbook/linting/eslint)
+*how to*
 * [moonrepo eslint example](https://moonrepo.dev/docs/guides/examples/eslint)
+
+*example repos which use shared configs:*
+* [moonrepo](https://github.com/moonrepo/dev/tree/master/packages/eslint-config/src)
+* [vercel style-guide](https://github.com/vercel/style-guide) 2023-11
+* [nextjs-monorepo-example](https://github.com/belgattitude/nextjs-monorepo-example/tree/main/packages/eslint-config-bases)
+* [ttos](https://github.com/ttoss/ttoss/blob/main/packages/eslint-config/config.js)
+
+*tutorials/blogs/guides/issues*
+* [turborepo eslint](https://turbo.build/repo/docs/handbook/linting/eslint)
 * [eslint complains about typescript's path aliasing](https://stackoverflow.com/questions/57032522/eslint-complains-about-typescripts-path-aliasing)
 * [include paths are pulled from tsconfig.json, even when eslint config parserOptions.project is tsconfig.eslint.json](https://github.com/microsoft/vscode-eslint/issues/1690)
 
