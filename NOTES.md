@@ -36,7 +36,11 @@ yarn workspace setup (server, client)
 
 ## config
 
-tsconfig.base.json examples [@vercel/style-guide](https://github.com/vercel/style-guide/blob/canary/typescript/tsconfig.base.json) [vitejs-monorepo-fullstack](https://github.com/zhengxs2018/vitejs-monorepo-fullstack/blob/main/tsconfig.base.json) [turborepo docs](https://turbo.build/repo/docs/handbook/linting/typescript#our-tsconfig-package) [turborepo with-vite](https://github.com/vercel/turbo/blob/main/examples/with-vite/packages/config-typescript/base.json)
+tsconfig.base.json examples\
+[@vercel/style-guide](https://github.com/vercel/style-guide/blob/canary/typescript/tsconfig.base.json)\
+[vitejs-monorepo-fullstack](https://github.com/zhengxs2018/vitejs-monorepo-fullstack/blob/main/tsconfig.base.json)\
+[turborepo docs](https://turbo.build/repo/docs/handbook/linting/typescript#our-tsconfig-package)\
+[turborepo with-vite](https://github.com/vercel/turbo/blob/main/examples/with-vite/packages/config-typescript/base.json)
 
 ### eslint
 
@@ -51,9 +55,9 @@ eslint-import-resolver-typescript\
 eslint module resolution [patch](https://www.npmjs.com/package/@rushstack/eslint-patch)
 
 example repos which use shared configs:
-* [airbnb-style](https://github.com/airbnb/javascript\)
+* [airbnb-style](https://github.com/airbnb/javascript)
 * [vercel style-guide](https://github.com/vercel/style-guide) 2023-11
-* [ttos](https://github.com/ttoss/ttoss/blob/main/packages/eslint-config/config.js\)
+* [ttos](https://github.com/ttoss/ttoss/blob/main/packages/eslint-config/config.js)
 * [moonrepo](https://github.com/moonrepo/dev/tree/master/packages/eslint-config/src)
 
 tutorials/blogs/guides/issues
