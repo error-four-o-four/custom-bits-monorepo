@@ -1,47 +1,24 @@
 {
 	"name": "@custom-bits/config",
+	"type": "module",
 	"version": "0.0.0",
+	"packageManager": "npm@9.8.0",
 	"description": "Monorepo style guide",
 	"license": "MIT",
-	"type": "module",
-	"files": [
-		"eslint",
-		"prettier",
-		"typescript"
-	],
 	"exports": {
+		"./eslint": "./eslint/index.js",
 		"./prettier": "./prettier/index.json",
 		"./typescript": "./typescript/base.json",
 		"./typescript/app": "./typescript/app.json",
 		"./typescript/lib": "./typescript/lib.json"
 	},
-	"devDependencies": {
-		"@eslint-types/prettier": "^5.0.1-1",
-		"@eslint-types/typescript-eslint": "^6.12.0",
-		"@types/eslint": "^8.44.7",
-		"eslint": "^8.54.0",
-		"prettier": "^3.1.0",
-		"typescript": "^5.2.2"
-	},
-	"dependencies": {
-		"@rushstack/eslint-patch": "^1.6.0",
-		"@typescript-eslint/eslint-plugin": "^6.13.0",
-		"@typescript-eslint/parser": "^6.13.0",
-		"eslint": ">=8.54.0 <9",
-		"eslint-config-airbnb-base": "^15.0.0",
-		"eslint-config-airbnb-typescript": "^17.1.0",
-		"eslint-config-prettier": "^9.0.0",
-		"eslint-gitignore": "^0.1.0",
-		"eslint-import-resolver-typescript": "^3.6.1",
-		"eslint-plugin-import": "^2.29.0",
-		"eslint-plugin-import-exports-imports-resolver": "^1.0.1",
-		"eslint-plugin-prettier": "^5.0.1",
-		"eslint-plugin-promise": "^6.1.1"
-	},
-	"peerDependencies": {
-		"eslint": ">=8.54.0 <9",
-		"prettier": ">=3.1.0 <4",
-		"typescript": ">=5.0.0 <5.3.0"
+	"files": [
+		"eslint",
+		"prettier",
+		"typescript"
+	],
+	"engines": {
+		"node": ">=18"
 	},
 	"peerDependenciesMeta": {
 		"eslint": {
@@ -54,8 +31,23 @@
 			"optional": true
 		}
 	},
-	"packageManager": "npm@9.8.0",
-	"engines": {
-		"node": ">=18"
+	"dependencies": {
+		"@eslint/js": "^8.54.0",
+		"@stylistic/eslint-plugin": "^1.4.1",
+		"@typescript-eslint/eslint-plugin": "^6.13.1",
+		"@typescript-eslint/parser": "^6.13.1",
+		"eslint": "^8.55.0",
+		"eslint-plugin-i": "^2.29.0",
+		"eslint-plugin-jsonc": "^2.10.0",
+		"eslint-plugin-markdown": "^3.0.1",
+		"eslint-plugin-n": "^16.3.1",
+		"eslint-plugin-prettier": "^5.0.1",
+		"jsonc-eslint-parser": "^2.4.0"
+	},
+	"devDependencies": {
+		"@eslint-types/prettier": "^5.0.1-1",
+		"@eslint-types/typescript-eslint": "^6.12.0",
+		"@eslint/eslintrc": "^2.1.3",
+		"@types/eslint": "^8.44.7"
 	}
 }

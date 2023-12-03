@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
+import { defineConfig } from 'vite';
 
 // @todo import from config utils
 const onError = () => ({

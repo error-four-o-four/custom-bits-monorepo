@@ -2,9 +2,9 @@
 
 ### eslint
 
-root: add md linter
+✅ add md linter
 
-use
+❌use
 ```
 // @ts-check
 const { defineConfig } = require('eslint-define-config')
@@ -15,8 +15,8 @@ const pkg = require('./package.json')
 
 ### .vscode\
 
-eslint.workingDirectories: [{ "mode": "auto" }]\
-typescript.tsdk: node_modules path
+✅ eslint.workingDirectories: [{ "mode": "auto" }]\
+✅ typescript.tsdk: node_modules path
 
 ### scripts
 
@@ -28,3 +28,7 @@ typescript.tsdk: node_modules path
 use del-cli\
 => .tsbuildinfo\
 => "build:clean"
+
+npm 8.15.1
+eslint 8.54.0
+node 18.7.0

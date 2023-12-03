@@ -2,8 +2,8 @@
 	"extends": "@custom-bits/config/typescript/lib",
 	"compilerOptions": {
 		"rootDir": "./src",
-		"outDir": "./lib",
-		"declarationDir": "./lib/types"
+		"declarationDir": "./lib/types",
+		"outDir": "./lib"
 	},
 	"include": ["src"]
 }

@@ -46,13 +46,21 @@ tsconfig.base.json examples\
 
 ### Consider
 
-[@rushstack/eslint-patch](https://www.npmjs.com/package/@rushstack/eslint-patch) ✔\
-[eslint-plugin-import-exports-imports-resolver](https://github.com/thepassle/eslint-plugin-import-exports-imports-resolver/)\
+~~[@rushstack/eslint-patch](https://www.npmjs.com/package/@rushstack/eslint-patch)~~\
+~~[eslint-plugin-import-exports-imports-resolver](https://github.com/thepassle/eslint-plugin-import-exports-imports-resolver/)~~\
 ~~[eslint-plugin-i](https://github.com/un-es/eslint-plugin-i/tree/fork-release)~~\
 [prettier-plugin-packagejson](https://www.npmjs.com/package/prettier-plugin-packagejson)
 
 *how to*
 * [moonrepo eslint example](https://moonrepo.dev/docs/guides/examples/eslint)
+
+*eslint flat config*
+* [Migration](https://eslint.org/docs/latest/use/configure/migration-guide)
+* [Example Antfu](https://github.com/antfu/eslint-config) => .vscode
+* [Example Abinnovision](https://github.com/abinnovision/js-commons/tree/010562d45b1486b4499dd594931bcfda9097598d/packages/eslint-config-base)
+* [Guide I](https://medium.com/p/7bd1ca453129)
+* [Guide II](https://allalmohamedlamine.medium.com/eslint-flat-config-and-new-system-an-ultimate-deep-dive-2023-46aa151cbf2b)
+* [@eslint-typescript support](https://github.com/typescript-eslint/typescript-eslint/issues/7694)
 
 *example repos which use shared configs:*
 * [moonrepo](https://github.com/moonrepo/dev/tree/master/packages/eslint-config/src)
@@ -60,10 +68,10 @@ tsconfig.base.json examples\
 * [nextjs-monorepo-example](https://github.com/belgattitude/nextjs-monorepo-example/tree/main/packages/eslint-config-bases)
 * [ttos](https://github.com/ttoss/ttoss/blob/main/packages/eslint-config/config.js)
 
-*tutorials/blogs/guides/issues*
-* [turborepo eslint](https://turbo.build/repo/docs/handbook/linting/eslint)
-* [eslint complains about typescript's path aliasing](https://stackoverflow.com/questions/57032522/eslint-complains-about-typescripts-path-aliasing)
-* [include paths are pulled from tsconfig.json, even when eslint config parserOptions.project is tsconfig.eslint.json](https://github.com/microsoft/vscode-eslint/issues/1690)
+~~*tutorials/blogs/guides/issues*~~
+* ~~[turborepo eslint](https://turbo.build/repo/docs/handbook/linting/eslint)~~
+* ~~[eslint complains about typescript's path aliasing](https://stackoverflow.com/questions/57032522/eslint-complains-about-typescripts-path-aliasing)~~
+* ~~[include paths are pulled from tsconfig.json, even when eslint config parserOptions.project is tsconfig.eslint.json](https://github.com/microsoft/vscode-eslint/issues/1690)~~
 
 ## typescript
 
