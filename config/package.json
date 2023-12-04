@@ -6,7 +6,10 @@
 	"description": "Monorepo style guide",
 	"license": "MIT",
 	"exports": {
-		"./eslint": "./eslint/index.js",
+		"./eslint": {
+			"types": "./eslint/index.d.ts",
+			"default": "./eslint/index.js"
+		},
 		"./prettier": "./prettier/index.json",
 		"./typescript": "./typescript/base.json",
 		"./typescript/app": "./typescript/app.json",
@@ -42,6 +45,7 @@
 		"eslint-plugin-markdown": "^3.0.1",
 		"eslint-plugin-n": "^16.3.1",
 		"eslint-plugin-prettier": "^5.0.1",
+		"globals": "^13.23.0",
 		"jsonc-eslint-parser": "^2.4.0"
 	},
 	"devDependencies": {

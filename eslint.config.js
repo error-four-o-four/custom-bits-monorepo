@@ -8,4 +8,11 @@ const tsconfigFile = './tsconfig.eslint.json';
 
 const root = path.dirname(eslintFile);
 
-export default createLintConfig(root, tsconfigFile);
+export default createLintConfig({
+	root,
+	globs: {
+		browser: ['demo/**/!(*.config).ts', 'libs/**/!(*.config).ts'],
+		node: ['config/**/*.js', 'eslint.config.js', '**/*.config.ts'],
+	},
+	tsconfig: tsconfigFile,
+});

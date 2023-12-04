@@ -1,8 +1,23 @@
-export { default as imports } from './imports.js';
-export { default as json } from './json.js';
-export { default as markdown } from './markdown.js';
-export { default as node } from './node.js';
-export { default as prettier } from './prettier.js';
-export { default as sortPkgJson } from './sortPkgJson.js';
-export { default as sortTscJson } from './sortTscJson.js';
-export { default as typescript } from './typescript.js';
+import json from './json.js';
+import sortPkgJson from './sortPkgJson.js';
+import sortTscJson from './sortTscJson.js';
+import markdown from './markdown.js';
+import javascript from './javascript.js';
+import typescript from './typescript.js';
+import imports from './imports.js';
+import node from './node.js';
+import browser from './browser.js';
+import prettier from './prettier.js';
+
+export default {
+	json,
+	sortPkgJson,
+	sortTscJson,
+	markdown,
+	javascript,
+	typescript,
+	imports,
+	node,
+	browser,
+	prettier,
+};

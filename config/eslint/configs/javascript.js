@@ -1,6 +1,6 @@
 // @todo
 
-export default {
+const rules = {
 	'accessor-pairs': [
 		'error',
 		{ enforceForClassMembers: true, setWithoutGet: true },
@@ -196,4 +196,15 @@ export default {
 	'valid-typeof': ['error', { requireStringLiterals: true }],
 	'vars-on-top': 'error',
 	yoda: ['error', 'never'],
+};
+
+/** @type {import('eslint').Linter.FlatConfig} */
+export default {
+	name: 'custom:javascript',
+	files: ['**/*.js'],
+	languageOptions: {
+		ecmaVersion: 2022,
+		sourceType: 'module',
+	},
+	rules,
 };

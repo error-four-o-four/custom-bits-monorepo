@@ -1,13 +1,18 @@
 import recommended from 'eslint-plugin-n/configs/recommended-module.js';
 
-import { ignores } from '../settings.js';
-
-// import { findRules } from '../utils.js';
-// import rulesJavascript from '../rules/javascript.js';
+// @todo
+// export default {
+// 	'node/handle-callback-err': ['error', '^(err|error)$'],
+// 	'node/no-deprecated-api': 'error',
+// 	'node/no-exports-assign': 'error',
+// 	'node/no-new-require': 'error',
+// 	'node/no-path-concat': 'error',
+// 	'node/prefer-global/buffer': ['error', 'never'],
+// 	'node/prefer-global/process': ['error', 'never'],
+// 	'node/process-exit-as-throw': 'error',
+// };
 
 const rules = {
-	'no-console': 'off',
-
 	'n/handle-callback-err': ['error', '^(err|error)$'],
 	'n/no-new-require': 'error',
 	'n/no-path-concat': 'error',
@@ -24,16 +29,20 @@ const rules = {
 	// 		js: 'always',
 	// 	},
 	// ],
+	'no-console': 'off',
 };
 
-// findRules(rules, recommended.rules);
+const { languageOptions } = recommended;
 
 /** @type {import('eslint').Linter.FlatConfig} */
 export default {
 	name: 'custom:node',
-	files: ['**/*.js'],
-	ignores,
-	languageOptions: recommended.languageOptions,
+	languageOptions: {
+		...languageOptions,
+		globals: {
+			...languageOptions.globals,
+		},
+	},
 	rules: {
 		...recommended.rules,
 		...rules,
