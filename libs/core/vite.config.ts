@@ -1,13 +1,18 @@
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import { defineConfig } from 'vite';
-import { resolve } from 'node:path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // @todo import from config utils
 const onError = () => ({
 	name: 'handleError',
 	buildEnd: (error?: Error) => {
 		if (error) {
-			console.error('Build failed:', error);
-			process.exit(1);
+			console.error(error);
+			throw new Error('❌ Failed');
 		}
 	},
 });

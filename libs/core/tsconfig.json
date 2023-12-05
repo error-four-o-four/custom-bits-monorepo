@@ -2,9 +2,9 @@
 	"extends": "@custom-bits/config/typescript/lib",
 	"compilerOptions": {
 		"baseUrl": ".",
-		"noEmit": true, // do not use this tsconfig file accidentially
-		"emitDeclarationOnly": false
+		"emitDeclarationOnly": false,
+		"noEmit": true
 	},
-	"include": ["package.json", "vite.config.ts", "src"],
-	"references": [{ "path": "./tsconfig.build.json" }]
+	"references": [{ "path": "./tsconfig.build.json" }],
+	"include": ["package.json", "vite.config.ts", "src"]
 }

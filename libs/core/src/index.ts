@@ -7,6 +7,8 @@ export const defineElement = (
 	}
 };
 
+console.log();
+
 export const cloneTemplateContent = (html: string, css = '') => {
 	const template = document.createElement('template');
 

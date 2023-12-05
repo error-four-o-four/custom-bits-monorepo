@@ -1,9 +1,14 @@
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
 
 import paths from 'vite-tsconfig-paths';
 
 import { dependencies } from './package.json';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
 	build: {

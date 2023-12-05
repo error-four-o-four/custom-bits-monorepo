@@ -1,13 +1,13 @@
 {
 	"name": "@custom-bits/boilerplate",
+	"type": "module",
 	"version": "0.0.0",
 	"license": "MIT",
-	"type": "module",
 	"exports": {
 		".": {
 			"import": {
-				"default": "./lib/index",
-				"types": "./lib/index.d.ts"
+				"types": "./lib/index.d.ts",
+				"default": "./lib/index.js"
 			}
 		}
 	},
@@ -17,13 +17,13 @@
 		"build:types": "tsc --build tsconfig.build.json --force",
 		"build": "npm run build:vite && npm run build:types"
 	},
+	"dependencies": {
+		"@custom-bits/core": "*"
+	},
 	"devDependencies": {
 		"@custom-bits/config": "*",
 		"typescript": "^5.2.2",
 		"vite": "^5.0.2",
 		"vite-tsconfig-paths": "^4.2.1"
-	},
-	"dependencies": {
-		"@custom-bits/core": "*"
 	}
 }

@@ -2,12 +2,12 @@
 	"extends": "@custom-bits/config/typescript/lib",
 	"compilerOptions": {
 		"baseUrl": ".",
-		"noEmit": true,
-		"emitDeclarationOnly": false,
 		"paths": {
 			":core": ["../../node_modules/@custom-bits/core/src/index.ts"]
-		}
+		},
+		"emitDeclarationOnly": false,
+		"noEmit": true
 	},
-	"include": ["package.json", "vite.config.ts", "src"],
-	"references": [{ "path": "./tsconfig.build.json" }]
+	"references": [{ "path": "./tsconfig.build.json" }],
+	"include": ["package.json", "vite.config.ts", "src"]
 }

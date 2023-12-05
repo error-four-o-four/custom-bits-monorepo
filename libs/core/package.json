@@ -1,14 +1,14 @@
 {
 	"name": "@custom-bits/core",
-	"license": "MIT",
-	"private": true,
-	"version": "0.0.0",
 	"type": "module",
+	"version": "0.0.0",
+	"private": true,
+	"license": "MIT",
 	"exports": {
 		".": {
 			"import": {
-				"default": "./lib/index.js",
-				"types": "./lib/types/index.d.ts"
+				"types": "./lib/types/index.d.ts",
+				"default": "./lib/index.js"
 			}
 		}
 	},
