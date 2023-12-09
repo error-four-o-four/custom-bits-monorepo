@@ -1,4 +1,5 @@
 // Rules generated with script
+/** @type {import('eslint').Linter.FlatConfig} */
 export default {
 	name: 'airbnb:node',
 	languageOptions: {
@@ -76,5 +77,17 @@ export default {
 		},
 		parserOptions: { ecmaFeatures: { globalReturn: true } },
 	},
-	rules: {},
+	rules: {
+		'callback-return': 'off',
+		'global-require': 'error',
+		'handle-callback-err': 'off',
+		'no-buffer-constructor': 'error',
+		'no-mixed-requires': ['off', false],
+		'no-new-require': 'error',
+		'no-path-concat': 'error',
+		'no-process-env': 'off',
+		'no-process-exit': 'off',
+		'no-restricted-modules': 'off',
+		'no-sync': 'off',
+	},
 };

@@ -1,4 +1,5 @@
 // Rules generated with script
+/** @type {import('eslint').Linter.FlatConfig} */
 export default {
 	name: 'airbnb:variables',
 	rules: {
