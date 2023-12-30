@@ -7,8 +7,8 @@ import paths from 'vite-tsconfig-paths';
 
 import { dependencies } from './package.json';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const file = fileURLToPath(import.meta.url);
+const dir = dirname(file);
 
 export default defineConfig({
 	build: {
@@ -16,7 +16,7 @@ export default defineConfig({
 		target: 'esnext',
 		outDir: 'lib',
 		lib: {
-			entry: resolve(__dirname, 'src/index.ts'),
+			entry: resolve(dir, 'src/index.ts'),
 			formats: ['es'],
 			fileName: 'index',
 		},

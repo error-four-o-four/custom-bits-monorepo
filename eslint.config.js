@@ -1,18 +1,27 @@
-import path from 'node:path';
+import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import createLintConfig from '@custom-bits/config/eslint';
+import createConfig from '@custom-bits/config/eslint';
 
-const eslintFile = fileURLToPath(import.meta.url);
-const tsconfigFile = './tsconfig.eslint.json';
+const root = dirname(fileURLToPath(import.meta.url));
 
-const root = path.dirname(eslintFile);
+console.info('Linting ...');
 
-export default createLintConfig({
+export default createConfig({
 	root,
-	globs: {
+	env: {
 		browser: ['demo/**/!(*.config).ts', 'libs/**/!(*.config).ts'],
-		node: ['config/**/*.js', 'eslint.config.js', '**/*.config.ts'],
+		node: [
+			'config/**/*.js',
+			'eslint.config.js',
+			'**/*.config.ts',
+		],
 	},
-	tsconfig: tsconfigFile,
+	project: [
+		'tsconfig.eslint.json',
+		'demo/tsconfig.json',
+		'demo/tsconfig.node.json',
+		'libs/**/tsconfig.json',
+		'libs/**/tsconfig.node.json',
+	],
 });

@@ -3,8 +3,8 @@ import { fileURLToPath } from 'node:url';
 
 import { defineConfig } from 'vite';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const file = fileURLToPath(import.meta.url);
+const dir = dirname(file);
 
 // @todo import from config utils
 const onError = () => ({
@@ -18,13 +18,13 @@ const onError = () => ({
 });
 
 export default defineConfig({
-	cacheDir: resolve(__dirname, '../../node_modules/.vite/core'),
+	cacheDir: resolve(dir, '../../node_modules/.vite/core'),
 	build: {
 		emptyOutDir: true,
 		target: 'esnext',
 		outDir: 'lib',
 		lib: {
-			entry: resolve(__dirname, 'src/index.ts'),
+			entry: resolve(dir, 'src/index.ts'),
 			formats: ['es'],
 			fileName: 'index',
 		},
