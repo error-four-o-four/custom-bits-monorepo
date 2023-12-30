@@ -1,5 +1,5 @@
-import { HTMLTestElement, elementTag } from './component.ts';
 import { defineElement } from ':core';
+import { HTMLTestElement, elementTag } from './component.ts';
 
 defineElement(elementTag, HTMLTestElement);
 

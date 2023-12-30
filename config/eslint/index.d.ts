@@ -1,20 +1,16 @@
 import type { Linter } from 'eslint';
 
-interface Globs {
+interface Environment {
 	browser: string[];
 	node: string[];
 }
 
-interface Options {
+export interface Options {
 	root: string;
-	globs: Globs;
-	tsconfig?: string;
+	env: Environment;
+	project: string | string[];
 }
 
-type FlatConfig = Linter.FlatConfig;
-type FlatConfigs = FlatConfig[];
-
-type CustomizeFn = (config: FlatConfigs) => void;
-type CreateLinterConfig = (options: Options) => Promise<FlatConfigs>;
+type CreateLinterConfig = (options: Options) => Promise<Linter.FlatConfig[]>;
 
 export default CreateLinterConfig;

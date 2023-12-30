@@ -5,6 +5,9 @@
 		"emitDeclarationOnly": false,
 		"noEmit": true
 	},
-	"references": [{ "path": "./tsconfig.build.json" }],
-	"include": ["package.json", "vite.config.ts", "src"]
+	"references": [
+		{ "path": "./tsconfig.build.json" },
+		{ "path": "./tsconfig.node.json" }
+	],
+	"include": ["package.json", "src"]
 }

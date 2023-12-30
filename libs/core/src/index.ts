@@ -1,13 +1,11 @@
 export const defineElement = (
 	elementTag: string,
-	ElementConstructor: CustomElementConstructor
+	ElementConstructor: CustomElementConstructor,
 ): void => {
 	if (!window.customElements.get(elementTag)) {
 		window.customElements.define(elementTag, ElementConstructor);
 	}
 };
-
-console.log();
 
 export const cloneTemplateContent = (html: string, css = '') => {
 	const template = document.createElement('template');

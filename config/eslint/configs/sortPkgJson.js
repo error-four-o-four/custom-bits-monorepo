@@ -67,7 +67,12 @@ export default {
 				pathPattern: '^resolutions$',
 			},
 			{
-				order: ['types', 'import', 'require', 'default'],
+				order: [
+					'types',
+					'import',
+					'require',
+					'default',
+				],
 				pathPattern: '^exports.*$',
 			},
 		],
