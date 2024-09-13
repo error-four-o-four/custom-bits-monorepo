@@ -6,45 +6,53 @@
 	"description": "Monorepo style guide",
 	"license": "MIT",
 	"exports": {
-		"./eslint": {
-			"types": "./eslint/index.d.ts",
-			"default": "./eslint/index.js"
+		".": {
+			"types": "./dist/config/index.d.ts",
+			"import": "./dist/config/index.js",
+			"default": "./dist/config/index.js"
 		},
-		"./prettier": "./prettier/index.json",
-		"./typescript": "./typescript/base.json",
-		"./typescript/node": "./typescript/node.json",
-		"./typescript/lib": "./typescript/lib.json",
-		"./typescript/app": "./typescript/app.json"
+		"./eslint": {
+			"types": "./dist/eslint/index.d.ts",
+			"default": "./dist/eslint/index.js"
+		},
+		"./prettier": "./json/prettier.json",
+		"./typescript": "./json/tsconfig.base.json",
+		"./typescript/node": "./json/tsconfig.node.json",
+		"./typescript/app": "./json/tsconfig.app.json"
 	},
 	"files": [
-		"eslint",
-		"prettier",
-		"typescript"
+		"dist",
+		"json"
 	],
 	"engines": {
 		"node": ">=18.0.0"
+	},
+	"scripts": {
+		"dev": "pkgroll --watch",
+		"build": "pkgroll --minify"
 	},
 	"peerDependenciesMeta": {
 		"eslint": {
 			"optional": true
 		},
-		"prettier": {
-			"optional": true
-		},
-		"typescript": {
+		"vite": {
 			"optional": true
 		}
 	},
 	"dependencies": {
-		"eslint-config-airbnb-flat": "^0.0.11",
+		"camelcase": "^8.0.0",
 		"eslint-plugin-jsonc": "^2.11.2",
 		"eslint-plugin-n": "^16.5.0",
+		"get-tsconfig": "^4.8.1",
 		"globals": "^13.24.0",
-		"jsonc-eslint-parser": "^2.4.0"
+		"jsonc-eslint-parser": "^2.4.0",
+		"prettier": "^3.3.3",
+		"vite": "^5.4.4",
+		"vite-tsconfig-paths": "^5.0.1"
 	},
 	"devDependencies": {
-		"@eslint-types/typescript-eslint": "^6.16.0",
-		"@types/eslint": "^8.56.0",
-		"@types/node": "^20.10.6"
+		"@types/node": "^22.5.4",
+		"pkgroll": "^2.5.0",
+		"typescript": "^5.5.3"
 	}
 }

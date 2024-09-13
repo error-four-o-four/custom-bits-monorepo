@@ -1,9 +1,0 @@
-{
-	"extends": "@custom-bits/config/typescript/lib",
-	"compilerOptions": {
-		"rootDir": "./src",
-		"declarationDir": "./lib/types",
-		"outDir": "./lib"
-	},
-	"include": ["src"]
-}

@@ -1,5 +1,5 @@
 {
-	"name": "custom-bits-monorepo",
+	"name": "custom-bits",
 	"type": "module",
 	"version": "0.0.0",
 	"license": "MIT",
@@ -7,24 +7,25 @@
 		"npm": ">=7.0.0",
 		"node": ">=18.0.0"
 	},
+	"scripts": {
+		"format": "npm run format --workspaces --if-present",
+		"format:fix": "npm run format:fix --workspaces --if-present",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"dev": "vite",
+		"build:lib": "vite build",
+		"build:tsc": "tsc -p ./tsconfig.build.json",
+		"build": "npm run build:tsc && npm run build:lib"
+	},
+	"devDependencies": {
+		"@custom-bits/config": "^0.0.0",
+		"eslint": "^9.10.0",
+		"prettier": "^3.3.3",
+		"typescript": "^5.5.3"
+	},
 	"workspaces": [
 		"config",
 		"demo",
-		"libs/*"
-	],
-	"scripts": {
-		"// prettier": "npm run prettier:check --workspaces --if-present",
-		"// prettier:fix": "npm run prettier --workspaces --if-present",
-		"lint": "eslint .",
-		"lint:fix": "eslint . --fix",
-		"lint:show": "npx eslint-flat-config-viewer",
-		"dev": "npm run dev -w demo"
-	},
-	"devDependencies": {
-		"@custom-bits/config": "*",
-		"eslint": "^8.56.0",
-		"eslint-flat-config-viewer": "^0.1.4",
-		"prettier": "^3.1.1",
-		"typescript": "^5.3.3"
-	}
+		"components/*"
+	]
 }

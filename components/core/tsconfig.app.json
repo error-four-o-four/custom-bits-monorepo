@@ -1,0 +1,12 @@
+{
+	"extends": "@custom-bits/config/typescript/app",
+	/* @todo test environment */
+	"include": ["src"],
+	"exclude": ["node_modules", "dist"],
+	"compilerOptions": {
+		"baseUrl": "./",
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"types": ["vite/client"]
+	}
+}

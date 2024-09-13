@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Vite Dev",
+	"extends": ["./tsconfig.base.json"],
+	"include": ["src", "lib"],
+	"compilerOptions": {
+		// @tsconfig/vite-react
+		"target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+
+    "allowImportingTsExtensions": true,
+    "noEmit": false,
+		"declaration": true,
+		"declarationMap": true,
+		"emitDeclarationOnly": true,
+    // "jsx": "preserve",
+
+		"baseUrl": ".",
+		"types": ["vite/client"]
+	}
+}

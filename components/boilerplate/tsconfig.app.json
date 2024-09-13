@@ -1,0 +1,12 @@
+{
+	"extends": "@custom-bits/config/typescript/app",
+	"include": ["dev", "src"],
+	"exclude": ["node_modules", "dist"],
+	"compilerOptions": {
+		"baseUrl": "./",
+		"paths": {
+			"@custom-bits/core": ["../core/src"]
+		},
+		"types": ["vite/client"]
+	}
+}

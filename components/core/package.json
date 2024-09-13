@@ -1,0 +1,27 @@
+{
+  "name": "@custom-bits/core",
+  "type": "module",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier \"(src|test)/**/*.(js|ts?(x))\"",
+    "format:fix": "prettier --write \"(src|test)/**/*.(js|ts?(x))\"",
+    "dev": "vite",
+    "build:lib": "vite build",
+    "build:tsc": "tsc -b ./tsconfig.build.json --force",
+    "build": "npm run build:lib && npm run build:tsc"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "@custom-bits/config": "file:../../config",
+    "@types/node": "^22.5.4",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.4",
+    "vite-plugin-dts": "^4.2.1"
+  }
+}
