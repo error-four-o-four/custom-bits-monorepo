@@ -15,6 +15,25 @@ export function typedCssModules(options: ParsedConfigOptions): Plugin {
 	const srcDirPath = resolve(options.projectDir, options.srcDir);
 	const fileSelectorsMap = new Map<string, string[]>();
 
+	let prettierConfig: prettier.Config;
+
+	const getPrettierConfig = async (): Promise<prettier.Config> => {
+		if (prettierConfig) {
+			return prettierConfig;
+		}
+
+		const loadedConfig = await prettier.resolveConfig(
+			resolve(srcDirPath, options.srcFile)
+		);
+		const parserConfig: prettier.Config = { parser: 'typescript' };
+
+		if (!loadedConfig) {
+			return (prettierConfig = parserConfig);
+		}
+
+		return (prettierConfig = Object.assign(loadedConfig, parserConfig));
+	};
+
 	return {
 		name: 'css-module-declarations',
 		apply: 'serve',
@@ -27,8 +46,10 @@ export function typedCssModules(options: ParsedConfigOptions): Plugin {
 				fileSelectorsMap.set(file, selectors);
 			});
 
+			const prettierConfig = await getPrettierConfig();
+
 			for (const [file, classes] of fileSelectorsMap.entries()) {
-				writeCssDtsModule(file, classes);
+				writeCssDtsModule(file, classes, prettierConfig);
 			}
 		},
 		async handleHotUpdate({ modules, file, read }) {
@@ -46,7 +67,9 @@ export function typedCssModules(options: ParsedConfigOptions): Plugin {
 				return;
 			}
 
-			await writeCssDtsModule(file, selectors);
+			const prettierConfig = await getPrettierConfig();
+
+			await writeCssDtsModule(file, selectors, prettierConfig);
 			fileSelectorsMap.set(file, selectors);
 
 			console.log('updated %o', file.replace(rootDir, ''));
@@ -89,10 +112,15 @@ function parseCssContent(content: string) {
 	return Array.from(new Set(matches));
 }
 
-async function writeCssDtsModule(source: string, input: string[]) {
+async function writeCssDtsModule(
+	source: string,
+	input: string[],
+	options: prettier.Config
+) {
 	const target = `${source}.d.ts`;
 	const content = await createCssDtsContent(input);
-	return writeFile(target, content, 'utf-8');
+	const formatted = await prettier.format(content, options);
+	return writeFile(target, formatted, 'utf-8');
 }
 
 async function createCssDtsContent(input: string[]) {
@@ -104,18 +132,13 @@ async function createCssDtsContent(input: string[]) {
 		return [PRE, 'export {};'].join(EOL) + EOL;
 	}
 
-	const data =
+	return (
 		[
 			PRE,
 			'declare const styles: {',
 			...input.map((el) => `\treadonly '${el}': string;`),
 			'};',
 			'export default styles;',
-		].join(EOL) + EOL;
-
-	const formatted = await prettier.format(data, {
-		parser: 'typescript',
-	});
-
-	return formatted;
+		].join(EOL) + EOL
+	);
 }

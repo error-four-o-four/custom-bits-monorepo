@@ -6,22 +6,7 @@ import type { UserConfig } from 'vite';
 const { __dirname } = getPath(import.meta.url);
 
 export const rootDir = resolve(__dirname, '../../..');
-
-// const cacheDir = resolve(rootDir, './node_modules/.vite');
-const publicDir = resolve(rootDir, './static');
-
-export const sharedConfig: UserConfig = {
-	// cacheDir,
-	publicDir,
-	css: {
-		modules: {
-			localsConvention: 'camelCaseOnly',
-		},
-	},
-	optimizeDeps: {
-		include: [],
-	},
-};
+export const publicDir = resolve(rootDir, './static');
 
 export function resolve(...args: Parameters<typeof nResolve>) {
 	return normalizePath(nResolve(...args));

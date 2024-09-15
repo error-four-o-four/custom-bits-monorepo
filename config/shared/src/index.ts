@@ -2,11 +2,11 @@ import { existsSync } from 'node:fs';
 import { extname } from 'node:path';
 
 import { getTsconfig } from 'get-tsconfig';
-import type { UserConfigExport } from 'vite';
+import type { UserConfig, UserConfigExport } from 'vite';
 
 import { getPlugins } from './plugins.js';
 
-import { sharedConfig, getCwd, resolve, rootDir } from './shared.js';
+import { getCwd, resolve, rootDir, publicDir } from './shared.js';
 
 import type {
 	ProjectConfigOptions,
@@ -24,6 +24,18 @@ const defaultProjectOptions: InternalConfigOptions = {
 	project: 'tsconfig.app.json',
 };
 
+const defaultCommonConfig: UserConfig = {
+	publicDir,
+	css: {
+		modules: {
+			localsConvention: 'camelCaseOnly',
+		},
+	},
+	optimizeDeps: {
+		include: [],
+	},
+};
+
 export function getDevelopmentConfig(
 	projectOptions?: ProjectConfigOptions
 ): UserConfigExport {
@@ -32,7 +44,7 @@ export function getDevelopmentConfig(
 	validateOptions(options);
 
 	return {
-		...sharedConfig,
+		...getCommonConfig(options),
 		server: {
 			// open: true
 		},
@@ -50,7 +62,7 @@ export function getBuildConfig(
 	const { projectDir, outDir, srcDir, srcFile } = options;
 
 	return {
-		...sharedConfig,
+		...getCommonConfig(options),
 		build: {
 			outDir: resolve(projectDir, outDir),
 			copyPublicDir: false,
@@ -110,4 +122,15 @@ function validateOptions(options: ParsedConfigOptions) {
 		console.warn(`Could not locate '${request.replace(rootDir, '')}'\n`);
 		process.exit(1);
 	}
+}
+
+function getCommonConfig({ projectDir }: ParsedConfigOptions): UserConfig {
+	if (!projectDir.includes('components')) {
+		console.log('Nope');
+		return defaultCommonConfig;
+	}
+
+	const cacheDir = resolve(rootDir, 'components/.cache/.vite');
+
+	return Object.assign(defaultCommonConfig, { cacheDir } as UserConfig);
 }
