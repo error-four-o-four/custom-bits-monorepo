@@ -1,2 +1,6 @@
 node_modules
 dist
+.gitattributes
+.gitignore
+.prettierignore
+package-lock.json

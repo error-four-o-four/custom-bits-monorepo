@@ -8,24 +8,19 @@
 		"node": ">=18.0.0"
 	},
 	"scripts": {
-		"format": "npm run format --workspaces --if-present",
-		"format:fix": "npm run format:fix --workspaces --if-present",
+		"format": "prettier --check ./* --ignore-path=./.prettierignore --cache --cache-location=./node_modules/.cache/.prettier-cache",
+		"format:ws": "npm run format -ws --if-present",
+		"format:all": "npm run format && npm run format:ws",
+		"format:fix": "prettier --write ./* --ignore-path=./.prettierignore --cache --cache-location=./node_modules/.cache/.prettier-cache",
+		"format:fix:ws": "npm run format:fix -ws --if-present",
+		"format:fix:all": "npm run format:fix && npm run format:ws:fix",
 		"lint": "eslint .",
-		"lint:fix": "eslint . --fix",
-		"dev": "vite",
-		"build:lib": "vite build",
-		"build:tsc": "tsc -p ./tsconfig.build.json",
-		"build": "npm run build:tsc && npm run build:lib"
+		"lint:fix": "eslint . --fix"
 	},
 	"devDependencies": {
 		"eslint": "^9.10.0",
 		"prettier": "^3.3.3",
 		"typescript": "^5.5.3"
 	},
-	"workspaces": [
-		"demo",
-		"components/*",
-		"config",
-		"config/*"
-	]
+	"workspaces": ["demo", "components/*", "config", "config/*"]
 }

@@ -1,18 +1,19 @@
 {
-  "name": "eslint-config",
-  "type": "module",
-  "license": "MIT",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "eslint": "^9.10.0",
-    "eslint-plugin-jsonc": "^2.16.0",
-    "eslint-plugin-n": "^17.10.2",
-    "globals": "^15.9.0",
-    "jsonc-eslint-parser": "^2.4.0",
-    "typescript-eslint": "^8.5.0"
-  }
+	"name": "eslint-config",
+	"type": "module",
+	"license": "MIT",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"format": "prettier --check . --ignore-path=../../.gitignore --cache --cache-location=../.cache/.prettier-cache-eslint",
+		"format:fix": "prettier --write . --ignore-path=../../.gitignore --cache --cache-location=../.cache/.prettier-cache-eslint"
+	},
+	"dependencies": {
+		"eslint": "^9.10.0",
+		"eslint-plugin-jsonc": "^2.16.0",
+		"eslint-plugin-n": "^17.10.2",
+		"globals": "^15.9.0",
+		"jsonc-eslint-parser": "^2.4.0",
+		"typescript-eslint": "^8.5.0"
+	}
 }

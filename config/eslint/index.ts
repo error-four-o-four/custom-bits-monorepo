@@ -1,1 +1,1 @@
-export default "eslint";
+export default 'eslint';

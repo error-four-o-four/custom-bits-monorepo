@@ -19,11 +19,7 @@
 		"./typescript/node": "./tsconfig/tsconfig.node.json",
 		"./typescript/app": "./tsconfig/tsconfig.app.json"
 	},
-	"files": [
-		"prettier/prettier.json",
-		"shared/dist",
-		"tsconfig"
-	],
+	"files": ["prettier/prettier.json", "shared/dist", "tsconfig"],
 	"devDependencies": {
 		"@types/node": "^22.5.4",
 		"pkgroll": "^2.5.0",

@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"format": "prettier . \"!(node_modules|dist)/**/*\"",
-		"format:fix": "prettier --write . \"!(node_modules|dist)/**/*\""
+		"format": "prettier --check . --ignore-path=../../.gitignore --cache --cache-location=../.cache/.prettier-cache-tsconfig",
+		"format:fix": "prettier --write . --ignore-path=../../.gitignore --cache --cache-location=../.cache/.prettier-cache-tsconfig"
 	}
 }
