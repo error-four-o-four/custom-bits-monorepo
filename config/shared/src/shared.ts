@@ -1,7 +1,7 @@
 import { dirname, resolve as nResolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
 import { normalizePath } from 'vite';
-import type { UserConfig } from 'vite';
 
 const { __dirname } = getPath(import.meta.url);
 

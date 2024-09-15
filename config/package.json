@@ -14,7 +14,7 @@
 			"import": "./shared/dist/index.js",
 			"default": "./shared/dist/index.js"
 		},
-		"./prettier": "./prettier/prettier.json",
+		"./prettier": "./prettier/prettier.config.js",
 		"./typescript": "./tsconfig/tsconfig.base.json",
 		"./typescript/node": "./tsconfig/tsconfig.node.json",
 		"./typescript/app": "./tsconfig/tsconfig.app.json"
