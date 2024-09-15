@@ -5,23 +5,23 @@
 		// @tsconfig/strictest
 		// https://github.com/tsconfig/bases/tree/main/bases
 		"strict": true,
-    "allowUnusedLabels": false,
-    "allowUnreachableCode": false,
-    "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true,
+		"allowUnusedLabels": false,
+		"allowUnreachableCode": false,
+		"exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
 
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 
-    "checkJs": true,
+		"checkJs": true,
 
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
 
 		"resolveJsonModule": true,
 		"verbatimModuleSyntax": true,

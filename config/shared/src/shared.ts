@@ -1,7 +1,7 @@
 import { dirname, resolve as nResolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { normalizePath } from 'vite';
-import type { UserConfig } from "vite";
+import type { UserConfig } from 'vite';
 
 const { __dirname } = getPath(import.meta.url);
 
@@ -15,8 +15,8 @@ export const sharedConfig: UserConfig = {
 	publicDir,
 	css: {
 		modules: {
-			localsConvention: "camelCaseOnly"
-		}
+			localsConvention: 'camelCaseOnly',
+		},
 	},
 	optimizeDeps: {
 		include: [],
@@ -35,6 +35,6 @@ export function getPath(url: string) {
 	const __filename = fileURLToPath(new URL(url));
 	return {
 		__filename: normalizePath(__filename),
-		__dirname: normalizePath(dirname(__filename))
+		__dirname: normalizePath(dirname(__filename)),
 	};
 }

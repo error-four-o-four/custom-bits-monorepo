@@ -1,5 +1,5 @@
 import viteTscPaths from 'vite-tsconfig-paths';
-import type { UserConfig } from "vite";
+import type { UserConfig } from 'vite';
 
 import { typedCssModules } from './plugins/typedCssModules.js';
 import type { ParsedConfigOptions } from './types.js';
@@ -9,10 +9,7 @@ export function getPlugins(
 ): NonNullable<UserConfig['plugins']> {
 	const { projects } = options;
 
-	return [
-		viteTscPaths({ projects }),
-		typedCssModules(options)
-	];
+	return [viteTscPaths({ projects }), typedCssModules(options)];
 }
 
 // https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma

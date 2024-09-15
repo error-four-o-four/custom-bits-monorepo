@@ -1,0 +1,42 @@
+{
+	"name": "shared-config",
+	"type": "module",
+	"license": "MIT",
+	"version": "0.0.1",
+	"private": true,
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
+		}
+	},
+	"scripts": {
+		"format": "prettier . \"!(node_modules|dist)/**/*\"",
+		"format:fix": "prettier --write . \"!(node_modules|dist)/**/*\"",
+		"dev": "pkgroll --watch",
+		"build": "pkgroll --minify"
+	},
+	"devDependencies": {
+		"@custom-bits/config": "file:..",
+		"@types/node": "^22.5.5",
+		"pkgroll": "^2.5.0"
+	},
+	"dependencies": {
+		"camelcase": ">=8.0.0",
+		"get-tsconfig": ">=4.8.1",
+		"prettier": ">=3.3.3",
+		"vite": ">=5.4.5",
+		"vite-tsconfig-paths": ">=5.0.1"
+	},
+	"peerDependencies": {
+		"camelcase": ">=8.0.0",
+		"get-tsconfig": ">=4.8.1",
+		"prettier": ">=3.3.3",
+		"vite": ">=5.4.5",
+		"vite-tsconfig-paths": ">=5.0.1"
+	}
+}

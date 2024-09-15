@@ -1,55 +1,29 @@
 {
 	"name": "@custom-bits/config",
+	"description": "Monorepo configuration & style guide",
 	"type": "module",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"packageManager": "npm@9.8.0",
-	"description": "Monorepo style guide",
 	"license": "MIT",
-	"exports": {
-		".": {
-			"types": "./dist/config/index.d.ts",
-			"import": "./dist/config/index.js",
-			"default": "./dist/config/index.js"
-		},
-		"./eslint": {
-			"types": "./dist/eslint/index.d.ts",
-			"default": "./dist/eslint/index.js"
-		},
-		"./prettier": "./json/prettier.json",
-		"./typescript": "./json/tsconfig.base.json",
-		"./typescript/node": "./json/tsconfig.node.json",
-		"./typescript/app": "./json/tsconfig.app.json"
-	},
-	"files": [
-		"dist",
-		"json"
-	],
 	"engines": {
 		"node": ">=18.0.0"
 	},
-	"scripts": {
-		"dev": "pkgroll --watch",
-		"build": "pkgroll --minify"
-	},
-	"peerDependenciesMeta": {
-		"eslint": {
-			"optional": true
+	"exports": {
+		".": {
+			"types": "./shared/dist/index.d.ts",
+			"import": "./shared/dist/index.js",
+			"default": "./shared/dist/index.js"
 		},
-		"vite": {
-			"optional": true
-		}
+		"./prettier": "./prettier/prettier.json",
+		"./typescript": "./tsconfig/tsconfig.base.json",
+		"./typescript/node": "./tsconfig/tsconfig.node.json",
+		"./typescript/app": "./tsconfig/tsconfig.app.json"
 	},
-	"dependencies": {
-		"camelcase": "^8.0.0",
-		"eslint-plugin-jsonc": "^2.11.2",
-		"eslint-plugin-n": "^16.5.0",
-		"get-tsconfig": "^4.8.1",
-		"globals": "^13.24.0",
-		"jsonc-eslint-parser": "^2.4.0",
-		"prettier": "^3.3.3",
-		"vite": "^5.4.4",
-		"vite-tsconfig-paths": "^5.0.1"
-	},
+	"files": [
+		"prettier/prettier.json",
+		"shared/dist",
+		"tsconfig"
+	],
 	"devDependencies": {
 		"@types/node": "^22.5.4",
 		"pkgroll": "^2.5.0",

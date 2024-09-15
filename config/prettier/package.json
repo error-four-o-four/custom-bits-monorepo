@@ -1,0 +1,10 @@
+{
+	"name": "prettier-config",
+	"version": "0.0.1",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"format": "prettier . \"!(node_modules|dist)/**/*\"",
+		"format:fix": "prettier --write . \"!(node_modules|dist)/**/*\""
+	}
+}

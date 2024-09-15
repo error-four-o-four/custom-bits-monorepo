@@ -1,17 +1,12 @@
-import { existsSync } from "node:fs";
-import { extname } from "node:path";
+import { existsSync } from 'node:fs';
+import { extname } from 'node:path';
 
 import { getTsconfig } from 'get-tsconfig';
-import type { UserConfigExport } from "vite";
+import type { UserConfigExport } from 'vite';
 
-import { getPlugins } from "./plugins.js";
+import { getPlugins } from './plugins.js';
 
-import {
-	sharedConfig,
-	getCwd,
-	resolve,
-	rootDir,
-} from "./shared.js";
+import { sharedConfig, getCwd, resolve, rootDir } from './shared.js';
 
 import type {
 	ProjectConfigOptions,
@@ -26,7 +21,7 @@ export * from './shared.js';
 const defaultProjectOptions: InternalConfigOptions = {
 	projectDir: getCwd(),
 	srcFile: 'index.ts',
-	project: 'tsconfig.app.json'
+	project: 'tsconfig.app.json',
 };
 
 export function getDevelopmentConfig(
@@ -41,7 +36,7 @@ export function getDevelopmentConfig(
 		server: {
 			// open: true
 		},
-		plugins: getPlugins(options)
+		plugins: getPlugins(options),
 	};
 }
 
@@ -52,12 +47,7 @@ export function getBuildConfig(
 
 	validateOptions(options);
 
-	const {
-		projectDir,
-		outDir,
-		srcDir,
-		srcFile,
-	} = options;
+	const { projectDir, outDir, srcDir, srcFile } = options;
 
 	return {
 		...sharedConfig,
@@ -68,7 +58,7 @@ export function getBuildConfig(
 			lib: {
 				entry: resolve(projectDir, srcDir, srcFile),
 				formats: ['es'],
-				fileName: `${srcFile.replace(extname(srcFile), '')}.min`
+				fileName: `${srcFile.replace(extname(srcFile), '')}.min`,
 			},
 			minify: true,
 		},
@@ -76,14 +66,13 @@ export function getBuildConfig(
 	};
 }
 
-
-function parseOptions(projectOptions?: ProjectConfigOptions): ParsedConfigOptions {
-	const {
-		projectDir,
-		project,
-		srcFile,
-	} = Object.assign(defaultProjectOptions, projectOptions ?? {});
-
+function parseOptions(
+	projectOptions?: ProjectConfigOptions
+): ParsedConfigOptions {
+	const { projectDir, project, srcFile } = Object.assign(
+		defaultProjectOptions,
+		projectOptions ?? {}
+	);
 
 	const tsc = getTsconfig(projectDir, project);
 
@@ -106,11 +95,7 @@ function parseOptions(projectOptions?: ProjectConfigOptions): ParsedConfigOption
 }
 
 function validateOptions(options: ParsedConfigOptions) {
-	const {
-		projectDir,
-		srcDir,
-		srcFile
-	} = options;
+	const { projectDir, srcDir, srcFile } = options;
 
 	let request = resolve(projectDir, 'index.html');
 

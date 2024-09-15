@@ -18,14 +18,14 @@
 		"build": "npm run build:tsc && npm run build:lib"
 	},
 	"devDependencies": {
-		"@custom-bits/config": "^0.0.0",
 		"eslint": "^9.10.0",
 		"prettier": "^3.3.3",
 		"typescript": "^5.5.3"
 	},
 	"workspaces": [
-		"config",
 		"demo",
-		"components/*"
+		"components/*",
+		"config",
+		"config/*"
 	]
 }

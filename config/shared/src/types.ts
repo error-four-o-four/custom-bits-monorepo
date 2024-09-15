@@ -6,10 +6,7 @@ export type InternalConfigOptions = {
 	project: string;
 };
 
-export type ParsedConfigOptions = Omit<
-	InternalConfigOptions,
-	'project'
-> & {
+export type ParsedConfigOptions = Omit<InternalConfigOptions, 'project'> & {
 	outDir: string;
 	srcDir: string;
 	projects: NonNullable<ViteTscPathsOptions['projects']>;

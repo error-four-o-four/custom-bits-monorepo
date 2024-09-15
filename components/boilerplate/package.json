@@ -1,31 +1,30 @@
 {
-  "name": "@custom-bits/boilerplate",
-  "type": "module",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "format": "prettier \"(src|test)/**/*.(js|ts?(x))\"",
-    "format:fix": "prettier --write \"(src|test)/**/*.(js|ts?(x))\"",
-    "dev": "vite",
-    "build:lib": "vite build",
-    "build:tsc": "tsc -p ./tsconfig.build.json",
-    "build": "npm run build:lib && npm run build:tsc"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.min.js",
-      "default": "./dist/index.d.ts"
-    }
-  },
-  "devDependencies": {
-    "@custom-bits/config": "file:../../config",
-    "@types/node": "^22.5.4",
-    "typescript": "^5.5.3",
-    "vite": "^5.4.4",
-    "vite-tsconfig-paths": "^5.0.1"
-  },
-  "dependencies": {
-    "@custom-bits/core": "file:../core"
-  }
+	"name": "@custom-bits/boilerplate",
+	"type": "module",
+	"version": "0.0.0",
+	"license": "MIT",
+	"scripts": {
+		"format": "prettier . \"!(node_modules|dist)/**/*\"",
+		"format:fix": "prettier --write . \"!(node_modules|dist)/**/*\"",
+		"dev": "vite",
+		"build:lib": "vite build",
+		"build:tsc": "tsc -p ./tsconfig.build.json",
+		"build": "npm run build:lib && npm run build:tsc"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.min.js",
+			"default": "./dist/index.d.ts"
+		}
+	},
+	"devDependencies": {
+		"@types/node": "^22.5.4",
+		"typescript": "^5.5.3",
+		"vite": "^5.4.4",
+		"vite-tsconfig-paths": "^5.0.1"
+	},
+	"dependencies": {
+		"@custom-bits/core": "file:../core"
+	}
 }

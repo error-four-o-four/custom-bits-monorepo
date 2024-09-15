@@ -1,6 +1,6 @@
 {
 	"extends": "@custom-bits/config/typescript/node",
-	"include": [ "vite.config.ts" ],
+	"include": ["vite.config.ts"],
 	"compilerOptions": {
 		"types": ["node", "vite/client"]
 	}
