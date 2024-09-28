@@ -1,6 +1,7 @@
 export const defineElement = (
 	elementTag: string,
-	ElementConstructor: CustomElementConstructor
+	ElementConstructor: CustomElementConstructor,
+	// extends?: ElementDefinitionOptions
 ): void => {
 	if (!window.customElements.get(elementTag)) {
 		window.customElements.define(elementTag, ElementConstructor);
@@ -16,5 +17,3 @@ export const cloneTemplateContent = (html: string, css = '') => {
 
 	return template.content.cloneNode(true);
 };
-
-// console.log('core');
