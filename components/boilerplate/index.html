@@ -23,7 +23,23 @@
 		</div>
 		<script type="module">
 			import './src/index.ts';
-			console.log('development %o', 'boilerplate');
+			// console.log('development %o', 'boilerplate');
+
+			const main = document.querySelector('main');
+			await customElements.whenDefined('custom-test');
+
+			let elt = document.querySelector('custom-test');
+			elt.setAttribute('name', 'Appended');
+
+			elt = document.createElement('custom-test');
+			elt.setAttribute('name', 'Before');
+			main.appendChild(elt);
+
+			elt = document.createElement('custom-test');
+			main.appendChild(elt);
+			elt.setAttribute('name', 'After');
+
+			console.log(elt);
 		</script>
 	</body>
 </html>

@@ -1,0 +1,11 @@
+:host {
+	span {
+		background-color: brown;
+	}
+}
+
+:host[name=Peter] {
+	span {
+		background-color: green;
+	}
+}

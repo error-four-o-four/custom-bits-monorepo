@@ -1,7 +1,10 @@
-import styles from './component.module.css';
-import css from './component.module.css?inline';
+import styles from './assets/style.module.css';
+import shadow from './assets/shadow.css?raw';
 
-const tag = 'custom-test';
-const html = /* html */ `<span></span>`;
+export const tag = 'custom-test';
+export const html = /* html */ `<span></span>`;
 
-export { tag, html, css, styles };
+const sheet = new CSSStyleSheet();
+sheet.replaceSync(shadow);
+
+export { sheet, styles };

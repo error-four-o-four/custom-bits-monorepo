@@ -1,5 +1,5 @@
 // Generated automatically, do not edit
 declare const styles: {
-	readonly span: string;
+	readonly customTest: string;
 };
 export default styles;
