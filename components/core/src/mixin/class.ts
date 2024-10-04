@@ -16,7 +16,7 @@ import {
 // https://open-wc.org/docs/development/dedupe-mixin/
 // https://github.com/open-wc/open-wc/blob/master/packages/dedupe-mixin/src/dedupeMixin.js
 
-export function HTMLMixin<
+export default function HTMLMixin<
 	Schemas extends CustomConfig
 >(schemas: Schemas) {
 	type EnumerableProperties = InferProperties<Schemas>;
@@ -116,7 +116,7 @@ function getAttributeConstructor<
 	throw new TypeError('Could not get attribute constructor', { cause: schema });
 }
 
-export type InferProperties<T extends CustomConfig> = {
+type InferProperties<T extends CustomConfig> = {
 	[K in keyof T]: T[K] extends infer V
 	? (
 		V extends Attribute.Constructor
@@ -130,7 +130,7 @@ export type InferProperties<T extends CustomConfig> = {
 	: never
 };
 
-export function createPropertyDescriptor<
+function createPropertyDescriptor<
 	K extends string,
 	C extends Attribute.Constructor,
 	V extends Attribute.Values | undefined = undefined

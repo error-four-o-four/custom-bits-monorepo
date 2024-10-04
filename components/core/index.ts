@@ -1,6 +1,4 @@
-import type { CustomConfig } from 'src/mixin/config.ts';
-
-import { HTMLMixin } from 'src/mixin/class.ts';
+import { HTMLMixin, type CustomConfig } from "src";
 
 // https://html.spec.whatwg.org/multipage/custom-elements.html#custom-element-conformance
 // https://github.com/lit/lit/blob/main/packages/reactive-element/src/reactive-element.ts

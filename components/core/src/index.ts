@@ -1,3 +1,8 @@
+import HTMLMixin from "./mixin/class.ts";
+import type { CustomConfig } from "./mixin/config.ts";
+
+export { HTMLMixin, type CustomConfig };
+
 export const defineElement = (
 	elementTag: string,
 	ElementConstructor: CustomElementConstructor,
